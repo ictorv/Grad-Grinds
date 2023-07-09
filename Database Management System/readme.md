@@ -1,17 +1,8 @@
 ![img](https://images.prismic.io/nightborn/7e215705-8aa6-4ff4-94bf-5a6a801b92a4_thumbnail_website2.jpg?auto=compress,format)
 
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 1
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 1</p>
-</div>
-
-## <center> 1
+### <center>Q1
 Create table emp with attributes emp_id, emp_name, hire_date, job_id, salary and commission.
 
 ```sql
@@ -24,6 +15,7 @@ CREATE TABLE emp (
   commission NUMBER
 );
 ```
+### <center>Q2
 a) Show the structure of the emp table. Select all data from the emp table.  
 ```sql
 DESC emp;
@@ -54,18 +46,9 @@ e) Write a query to find out the annual salary of each employee.
 SELECT emp_id, emp_name, salary * 12 AS annual_salary
 FROM emp;
 ```
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 2
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 2</p>
-</div>
-
-## <center>1
+### <center>Q1
 a) Display the names of employees who have an ‘a’ and an ‘e’ in their names.
 ```sql
 SELECT emp_name
@@ -89,7 +72,7 @@ WHERE
     salary BETWEEN 5000 AND 12000
     AND job_id IN (10, 20);
 ```
-## <center>2
+### <center>Q2
 Write a query that displays all employee’s whose names starts with J,A or M. Sort the results by the employee’s name.
 
 ```sql
@@ -104,7 +87,7 @@ WHERE
 ORDER BY
     emp_name;
 ```
-## <center>3
+### <center>Q3
 a) For each employee display the employee number, salary and salary increased by 15%. Label the column New_salary.
 ```sql
 SELECT emp_id, salary, (salary * 1.15) AS New_salary FROM emp;
@@ -120,7 +103,7 @@ FROM
     emp;
 ```
 
-## <center>4
+### <center>Q4
 Write a query that produces the following for each employee.
 <employee last name> earns <salary> monthly but wants <3 times salary>. Label the column as Dream Salaries.
 ```sql
@@ -131,7 +114,7 @@ FROM
     emp;
 ```
 
-## <center>5
+### <center>Q5
 For each employee, display the employee number, employee name, salary, and salary increased by 15% and expressed as a whole number. Label the column as New_Salary.
 ```sql
 SELECT
@@ -143,7 +126,7 @@ FROM
     emp;
 ```
 
-## <center>6
+### <center>Q6
 Display the name, total monthly salary of each employees i.e. salary along with commission of all those employees whose name starts with ‘A’.
 ```sql
 SELECT
@@ -155,18 +138,9 @@ WHERE
     emp_name LIKE 'A%';
 ```
 
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 3
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 3</p>
-</div>
-
-## <center>1
+### <center>Q1
 a) Create a table Depart with the columns dept_id, dept_name, location_name where dept_id is primary key.
 ```sql
 CREATE TABLE Depart (
@@ -196,7 +170,7 @@ CREATE TABLE Employ (
   CONSTRAINT fk_dept_no FOREIGN KEY (department_no) REFERENCES Depart(dept_id)
 );
 ```
-## <center>2
+### <center>Q2
 a)   Create a table Person with the columns person_id, first_name, last_name, phone where person_id is primary key.
 ```sql
 CREATE TABLE Person (
@@ -223,7 +197,7 @@ CREATE TABLE Orders (
 ```sql
 ALTER TABLE Person ADD CONSTRAINT uc_phone UNIQUE (phone);
 ```
-## <center>3
+### <center>Q3
 Create a table emp_new with columns name, age, dept_name, loc with the check constraints that names must start with capital S, dept_names should be in upper case only, locations should be in lower case only and age should be more than 18 years.
 ```sql
 CREATE TABLE emp_new (
@@ -233,7 +207,7 @@ CREATE TABLE emp_new (
     loc VARCHAR(50) CHECK (loc = LOWER(loc))
 );
 ```
-## <center>4
+### <center>Q4
 Create a table Employees with the columns empid, name, salary, address, hire_date, mgr_no,dept_name where empid is primary key. Make a referential integrity between emp_id and mgr_no.
 ```sql
 CREATE TABLE emp_new (
@@ -243,7 +217,7 @@ CREATE TABLE emp_new (
     loc VARCHAR(50) CHECK (loc = LOWER(loc))
 );
 ```
-## <center>5
+### <center>Q5
 Create table teacher with columns eid,name,salary,dept_name where empid is primary key. Make a referential integrity between eid and mgr_no of Employees table. Name cannot be left empty. The department name must be in uppercase
 ```sql
 CREATE TABLE teacher (
@@ -255,19 +229,9 @@ CREATE TABLE teacher (
     CONSTRAINT fk_eid_teacher FOREIGN KEY (eid) REFERENCES Employees(empid)
 );
 ```
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 4
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 4</p>
-</div>
-
-
-## <center>1
+### <center>Q1
 a) Create the EMPP table based on the following table instance chart.
 | Column   | Data Type | Length |
 |----------|-----------|--------|
@@ -303,7 +267,7 @@ e) Drop the EMPP table
 ```sql
 DROP TABLE EMP_old;
 ```
-## <center>2
+### <center>Q2
 a)   Create a table emp_day4 with columns empid, ename, sal from emp_xx.
 ```sql
 CREATE TABLE emp_xx (
@@ -371,26 +335,16 @@ f) Rename the table to emp_d4.
 ```sql
 ALTER TABLE emp_day4 RENAME TO emp_d4;
 ```
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 5
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 5</p>
-</div>
-
-
-## <center>1
+### <center>Q1
 Write a query to display the number of people with the same dept.
 ```sql
 select job_id from emp group by job_id;
 select job_id, count(*) from emp group by job_id;
 select job_id, count(*) as num_people from emp group by job_id;
 ```
-## <center>2
+### <center>Q2
 a) Determine the number of managers without listing them. Label the column as Number of Managers
 ```sql
 select count(*) as emp_number from emp where is_mgr=1;
@@ -400,7 +354,7 @@ b) Write a query that displays the difference between the highest and lowest sal
 select max(salary)-min(salary) as Difference from emp ;
 ```
 
-## <center>3
+### <center>Q3
 Display the manager number and the salary of the lowest paid employee for that manager. Exclude anyone whose manager is not known. Sort the output in descending order of salary.
 ```sql
 SELECT mgr_num, MIN(salary) AS minimum_salary
@@ -427,7 +381,7 @@ WHERE mgr_num IS NOT NULL
 GROUP BY mgr_num
 ORDER BY minimum_salary DESC;
 ```
-## <center>4
+### <center>Q4
 a) Display the highest, lowest, sum, and average salary of all employees. Label the columns Maximum, Minimum, Sum, and Average, respectively. Round your results to the nearest whole number.
 ```sql
 SELECT
@@ -449,7 +403,7 @@ FROM emp
 GROUP BY job_id;
 ```
  
-## <center>5
+### <center>Q5
 a) Create a query to display the last name and salary for all employees. Format the salary to be 15 characters long, left padded with $.
 ```sql
 SELECT
@@ -467,19 +421,9 @@ SELECT SUBSTR(emp_name, INSTR(emp_name, ' ') + 1) AS Name,
        END AS commission_amount
 FROM emp;
 ```
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 6
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 6</p>
-</div>
-
-
-## <center>1
+### <center>Q1
 a) Display the employee name and department name for all employees who have an ‘a’ (lowercase) in their names. 
 ```sql
 SELECT emp_name, dept_name
@@ -493,7 +437,7 @@ FROM emp
 WHERE commission IS NOT NULL;
 ```
 
-## <center>2
+### <center>Q2
 a) Display the employee name and employee number along with their manager’s name and manager number. Label the columns employee, emp#, manager, and mgr# resp.
 ```sql
 SELECT emp_name AS employee, emp_number AS emp#, mgr_name AS mgr#, mgr_number AS mgr#
@@ -507,7 +451,7 @@ SELECT emp_name AS employee, emp_number AS emp#, mgr_name AS mgr#, mgr_number AS
 FROM emp
 ORDER BY emp_number;
 ```
-## <center>3
+### <center>Q3
 a) Create a query that displays employee name, department numbers and all the employees who work in the same department as the given employee. Give each column an appropriate label.
 ```sql
 SELECT
@@ -532,7 +476,7 @@ JOIN
 WHERE
     e2.emp_name = 'David';
 ```
-## <center>4
+### <center>Q4
 Display the names and hire date for all employees who were hired before their managers, along with their manager’s names and hire dates. (Hint: Use self join)
 ```sql
 SELECT
@@ -547,13 +491,13 @@ JOIN
 WHERE
     e.hire_date < m.hire_date;
 ```
-## <center>5
+### <center>Q5
 Write a query to display the last name, department number, and department name for all employees.
 ```sql
 SELECT SUBSTR(emp_name, INSTR(emp_name, ' ')+1) AS Name, dept_number, dept_name
 FROM emp;
 ```
-## <center>6
+### <center>Q6
 a) Create a unique listing of all jobs that are in department 80. Include the location of the department in the output.
 ```sql
 SELECT DISTINCT e.dept_name, d.location
@@ -567,19 +511,9 @@ SELECT SUBSTR(emp_name, INSTR(emp_name, ' ')+1), dept_number, dept_number
 FROM emp
 WHERE location = 'Toronto';
 ```
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 7
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 7</p>
-</div>
-
-
-## <center>1
+### <center>Q1
 Write a query to display the employee numbers and names of all employees who earn more than average salary. Sort results in ascending order of salary.
 ```sql
 SELECT emp_number, emp_name
@@ -587,7 +521,7 @@ FROM emp
 WHERE salary > (SELECT AVG(salary) FROM emp)
 ORDER BY salary ASC;
 ```
-## <center>2
+### <center>Q2
 a) Write a query that displays the employee numbers and names of all employees who work in a department with any employee whose name contains a ‘u’.
 ```sql
 SELECT e.emp_number, e.emp_name
@@ -634,33 +568,23 @@ ORDER BY salary DESC
 OFFSET 3 ROW
 FETCH NEXT 1 ROW ONLY;
 ```
-## <center>3
+### <center>Q3
 Display the department and its average salary whose average salary is minimum among all the departments.
 ```sql
 
 ```
-## <center>4
+### <center>Q4
 Display employee names and their salary whose salary is greater than at least one employee of department no 50.
 ```sql
 
 ```
-## <center>5
+### <center>Q5
 Display employee names and their salary whose salary is greater than all employees of department no  50
 ```sql
 
 ```
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
-
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 8</p>
-</div>
-
-## <center>1
+# Day 8
+### <center>Q1
 Write a pl/sql code block that will accept an account number from the user and debit an amount of Rs. 2000 from the account if the account has a minimum balance of 500 after the amount is debited. The process is fired on accounts table
 
 | ACCOUNT_ID  | NAME   |  BALANCE |
@@ -670,7 +594,7 @@ Write a pl/sql code block that will accept an account number from the user and d
 ```sql
 
 ```
-## <center>2
+### <center>Q2
 Write a Pl/SQL code block to calculate the area of a circle for a value of radius varying from 3 to 7. Store the radius and the corresponding values of calculated area in a table AREAS
 
 |RADIUS | AREA|
@@ -682,12 +606,12 @@ Write a Pl/SQL code block to calculate the area of a circle for a value of radiu
 
 ```
 
-## <center>3
+### <center>Q3
 Write a PL/SQL code to calculate the factorial of a number entered by the user
 ```sql
 
 ```
-## <center>4
+### <center>Q4
 Write a PL/SQL block of code that first inserts a record in an Emp table. Update the salaries of Blake and Clark by Rs 2000 and Rs 1500. Then check to see that the total salary does not exceed 20000. If the total salary is greater than 20000 then undo the updates made to the salaries of Blake and Clark.
 | Emp_No | Emp_Name | Sal  |
 |--------|----------|------|
@@ -698,24 +622,15 @@ Write a PL/SQL block of code that first inserts a record in an Emp table. Update
 ```sql
 
 ```
-<div style="color:white;
-           display:fill;
-           border-radius:5px;
-           background-color:lightblue;
-           font-size:110%;
-           font-family:Verdana;
-           letter-spacing:0.5px">
+# Day 9
 
-<p style="padding: 5px; color:white; text-align:center"><b></b>Day 9</p>
-</div>
-
-## <center>1
+### <center>Q1
 Create a table student with attributes (sid,name) and a table course with attributes (cid,studentid). studentid in course table is the foreign key referring to sid of student table.
 Create a trigger such that if anybody wants to delete a row from parent table then the corresponding row in child is first deleted then the row from parent is allowed to be deleted.
 ```sql
 
 ```
-## <center>2
+### <center>Q2
 Create a transparent audit system for a table client_master. The system must keep track of the records that are being deleted or update done on client_master table .The functionality being when a record is deleted or modified the original record details and the date of operation are stored in the audit table, then the delete or update is allowed to go through.
 - Table 1: Client_master
 

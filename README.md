@@ -1,2 +1,2 @@
 # Grad-Grinds
-Feel Free to contribute don't forget to star
+We appreciate your contribution to this repository!
